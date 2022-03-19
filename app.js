@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 
 //Mongoose Connection
-const DB = "mongodb+srv://Shubham:Shubh165!@cluster0.ggqzc.mongodb.net/NodeExpress?retryWrites=true&w=majority"
+const DB = "mongodb+srv://Shubham:Shubh165@cluster0.ptpsp.mongodb.net/TEST?retryWrites=true&w=majority"
 mongoose.connect(DB,{ 
     useNewUrlParser : true  , 
     useUnifiedTopology : true
@@ -140,7 +140,10 @@ app.post("/delete", function(req, res){
                 User.deleteOne({username : req.body.username} , function(err,founduser){
                     if(!err){
                        if(founduser){
-                            res.send(`${userN} deleted from the database`) ;
+                           res.render("ans",{
+                               message : "User deleted "
+                           });
+                            // res.send(`${userN} deleted from the database`) ;
                        }
                        else{
                            res.send("No matching User Found with username " + userN);
