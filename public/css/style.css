@@ -3,7 +3,7 @@
 
 body {
     background-color: #444442;
-    padding-top: 85px;
+    padding-top: 7%;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -15,6 +15,12 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    font-family: 'Poppins', sans-serif, 'arial';
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
 h4 {
     font-family: 'Roboto', sans-serif, 'arial';
     font-weight: 400;
@@ -142,4 +148,83 @@ input[type=checkbox] + label {
 input[type=checkbox]:checked + label {
   color: #f00;
   font-style: normal;
+}
+
+.container_grid {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    border-radius: 10%;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Image Image Image Image Email Email Email Name Name Name"
+      "Image Image Image Image Phone Phone Phone Phone Phone Phone";
+  }
+  
+  .Image { 
+    grid-area: Image;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+    border-top-left-radius: 2% ;
+    border-bottom-left-radius: 2% ;
+    background-color: #939393;
+ }
+  
+  .Email { 
+    grid-area: Email;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: #939393;
+ }
+  
+  .Name { 
+    grid-area: Name;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+    border-top-right-radius: 3%;
+
+    background-color:  #939393 ;
+ }
+  
+  .Phone { 
+    grid-area: Phone;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+    border-bottom-right-radius: 3%;
+    background-color:  #939393; 
+}
+
+@media only screen and (max-width: 768px){
+    .container_grid{
+        display: block;
+    }
+    .Name{
+        border-radius: 0%;
+    }
+    .Email{
+        border-radius: 0%;
+    }
+    .Image{
+        border-radius: 0%;
+    }
+    .userName{
+        border-radius: 0%;
+    }
 }
